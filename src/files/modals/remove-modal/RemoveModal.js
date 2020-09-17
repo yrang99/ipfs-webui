@@ -30,7 +30,7 @@ const RemoveModal = ({ t, tReady, onCancel, onRemove, folders, files, className,
             <input type="checkbox" class="mr1" id="unpinFromServices" name="unpinFromServices" />
             <label for="unpinFromServices">{t('removeModal.checkboxUnpinFromServices')}</label>
           </div>
-    </div>
+        </div>
       </ModalBody>
 
       <ModalActions>
