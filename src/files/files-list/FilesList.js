@@ -44,7 +44,7 @@ export class FilesList extends React.Component {
     onShare: PropTypes.func.isRequired,
     onInspect: PropTypes.func.isRequired,
     onDownload: PropTypes.func.isRequired,
-    onDelete: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired,
     onRename: PropTypes.func.isRequired,
     onNavigate: PropTypes.func.isRequired,
     onAddFiles: PropTypes.func.isRequired,
@@ -97,7 +97,7 @@ export class FilesList extends React.Component {
         }}
         animateOnStart
         unselect={unselectAll}
-        remove={() => this.props.onDelete(this.selectedFiles)}
+        remove={() => this.props.onRemove(this.selectedFiles)}
         rename={() => this.props.onRename(this.selectedFiles)}
         share={() => this.props.onShare(this.selectedFiles)}
         download={() => this.props.onDownload(this.selectedFiles)}
@@ -146,7 +146,7 @@ export class FilesList extends React.Component {
     }
 
     if (e.key === 'Delete' && selected.length > 0) {
-      return this.props.onDelete(this.selectedFiles)
+      return this.props.onRemove(this.selectedFiles)
     }
 
     if (e.key === ' ' && focused !== null) {

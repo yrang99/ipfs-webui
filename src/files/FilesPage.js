@@ -177,7 +177,7 @@ class FilesPage extends React.Component {
         downloadProgress={this.state.downloadProgress}
         onShare={(files) => this.showModal(SHARE, files)}
         onRename={(files) => this.showModal(RENAME, files)}
-        onDelete={(files) => this.showModal(DELETE, files)}
+        onRemove={(files) => this.showModal(DELETE, files)}
         onInspect={this.onInspect}
         onDownload={this.onDownload}
         onAddFiles={this.onAddFiles}
@@ -231,7 +231,7 @@ class FilesPage extends React.Component {
           pinned={contextMenu.file && contextMenu.file.pinned}
           cid={contextMenu.file && contextMenu.file.cid}
           onShare={() => this.showModal(SHARE, [contextMenu.file])}
-          onDelete={() => this.showModal(DELETE, [contextMenu.file])}
+          onRemove={() => this.showModal(DELETE, [contextMenu.file])}
           onRename={() => this.showModal(RENAME, [contextMenu.file])}
           onInspect={() => this.onInspect(contextMenu.file.cid)}
           onDownload={() => this.onDownload([contextMenu.file])}
@@ -264,7 +264,7 @@ class FilesPage extends React.Component {
           onMove={this.props.doFilesMove}
           onMakeDir={this.props.doFilesMakeDir}
           onShareLink={this.props.doFilesShareLink}
-          onDelete={this.props.doFilesDelete}
+          onRemove={this.props.doFilesDelete}
           onAddByPath={this.onAddByPath}
           cliOptions={cliOptions}
           { ...this.state.modals } />

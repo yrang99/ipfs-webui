@@ -29,7 +29,7 @@ export const ModalBody = ({ className, icon, title, children, ...props }) => {
         {icon}
       </div>
 
-      <p className='charcoal-muted fw5'>{title}</p>
+      <p className='charcoal fw6'>{title}</p>
 
       {children}
     </div>
@@ -50,7 +50,7 @@ ModalBody.defaultProps = {
 
 export const Modal = ({ onCancel, children, className, ...props }) => {
   return (
-    <div className={`${className} bg-white w-80 shadow-4 sans-serif relative`} style={{ maxWidth: '30em' }} {...props}>
+    <div className={`${className} bg-white w-80 shadow-4 sans-serif relative`} style={{ maxWidth: '34em' }} {...props}>
       { onCancel &&
         <CancelIcon className='absolute pointer w2 h2 top-0 right-0 fill-gray' onClick={onCancel} />
       }
