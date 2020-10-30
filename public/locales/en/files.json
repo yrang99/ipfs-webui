@@ -67,7 +67,10 @@
     },
     "step2": {
       "title": "Breadcrumbs",
-      "paragraph1": "The current work directory, you can navigate through the folder hierarchy by clicking on them."
+      "paragraph1": "These breadcrumbs display the path to your current directory. You can…",
+      "bullet1": "Click an individual breadcrumb to go to that directory",
+      "bullet2": "Right-click a breadcrumb to get the actions menu for that directory",
+      "bullet3": "Drag files onto a breadcrumb to move or import them"
     },
     "step3": {
       "title": "Add files",
@@ -82,6 +85,7 @@
       "paragraph3": "Pro tip: drag and drop a file from any other page of the Web UI to add them to the root of your MFS."
     }
   },
+  "loadMore": "Load more",
   "previousFolder": "Go back to previous folder",
   "fileLabel": "Select {type} {name} with size: {size}",
   "hashUnavailable": "hash unavailable",

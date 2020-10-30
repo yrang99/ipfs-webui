@@ -17,8 +17,8 @@ function BarOption ({ children, title, isLink = false, className = '', ...etc })
 
   return (
     <div className={className} {...etc}>
-      <span className='nowrap db f4 navy'>{children}</span>
-      <span className={`db ttl ${isLink ? 'navy underline' : 'gray'}`}>{title}</span>
+      <span className='nowrap db f4 charcoal'>{children}</span>
+      <span className={`db ttu f6 montserrat fw4 ${isLink ? 'link' : 'charcoal-muted'}`}>{title}</span>
     </div>
   )
 }
@@ -40,6 +40,11 @@ class Header extends React.Component {
     }, pos)
   }
 
+  handleBreadCrumbsContextMenu = (ev, breadcrumbsRef, file) => {
+    const pos = breadcrumbsRef.getBoundingClientRect()
+    this.props.handleContextMenu(ev, 'TOP', file, pos)
+  }
+
   render () {
     const {
       files,
@@ -55,7 +60,9 @@ class Header extends React.Component {
     return (
       <div className='db flex-l justify-between items-center'>
         <div className='mb3 overflow-hidden mr2'>
-          <Breadcrumbs className="joyride-files-breadcrumbs" path={files ? files.path : '/404'} onClick={onNavigate} />
+          <Breadcrumbs className="joyride-files-breadcrumbs" path={files ? files.path : '/404'}
+            onClick={onNavigate} onContextMenuHandle={(...args) => this.handleBreadCrumbsContextMenu(...args)}
+            onAddFiles={this.props.onAddFiles} onMove={this.props.onMove}/>
         </div>
 
         <div className='mb3 flex justify-between items-center bg-snow-muted joyride-files-add'>
